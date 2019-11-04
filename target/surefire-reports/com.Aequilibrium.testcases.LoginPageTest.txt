@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: com.Aequilibrium.testcases.LoginPageTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 1.556 sec <<< FAILURE!
+setUp(com.Aequilibrium.testcases.LoginPageTest)  Time elapsed: 1.296 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: org/openqa/selenium/remote/JsonToBeanConverter
+	at org.openqa.selenium.firefox.Preferences.readDefaultPreferences(Preferences.java:95)
+	at org.openqa.selenium.firefox.Preferences.<init>(Preferences.java:65)
+	at org.openqa.selenium.firefox.FirefoxProfile.<init>(FirefoxProfile.java:81)
+	at org.openqa.selenium.firefox.FirefoxProfile.<init>(FirefoxProfile.java:71)
+	at org.openqa.selenium.firefox.FirefoxProfile.<init>(FirefoxProfile.java:60)
+	at com.qa.base.BasePage.init_driver(BasePage.java:38)
+	at com.Aequilibrium.testcases.LoginPageTest.setUp(LoginPageTest.java:23)
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.remote.JsonToBeanConverter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 43 more
+
