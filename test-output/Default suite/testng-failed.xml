@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <parameter name="browser" value="param-val-not-found"/>
   <test name="Default test(failed)">
     <classes>
       <class name="com.Aequilibrium.testcases.LoginPageTest">
         <methods>
+          <include name="LoginTestWithInvalidUsername"/>
+          <include name="LoginTestWithNoUsername"/>
+          <include name="LoginTestWithASpaceInUsernameAndPassword"/>
+          <include name="LoginTestWithInvalidPassword"/>
           <include name="setUp"/>
+          <include name="LoginTestWithInvalidUsernamePassword"/>
           <include name="tearDown"/>
           <include name="LoginTest"/>
+          <include name="LoginTestWithBlankUsernamePassword"/>
+          <include name="LoginTestWithNoPassword"/>
         </methods>
       </class> <!-- com.Aequilibrium.testcases.LoginPageTest -->
     </classes>

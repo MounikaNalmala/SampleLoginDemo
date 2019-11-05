@@ -8,7 +8,6 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import com.qa.util.WebEventListener;
@@ -28,17 +27,14 @@ public class BasePage {
 	 * @return driver
 	 */
 	public WebDriver init_driver(Properties prop) {
-		String browserName = prop.getProperty("browser");
+		String browser = prop.getProperty("browser");
 		String url = prop.getProperty("url");
-		
 
-		if (browserName.equals("chrome")) {
+		if (browser.equals("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 
-		} else if (browserName.equals("FF")) {
-			
-			//System.setProperty("webdriver.gecko.driver", "/Users/geckodriver");
+		} else if (browser.equals("FF")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
@@ -70,7 +66,8 @@ public class BasePage {
 	public Properties init_properties() {
 		prop = new Properties();
 		try {
-			FileInputStream ip = new FileInputStream("/Users/moranjo/eclipse-workspace/SeleniumSampleProjectHybridFramework/AequilibriumTest/src/main/java/com/qa/config/config.properties");
+		    String usingSystemProperty = System.getProperty("user.dir"); 
+			FileInputStream ip = new FileInputStream(usingSystemProperty+"/src/main/java/com/qa/config/config.properties");
 			prop.load(ip);
 
 		} catch (FileNotFoundException e) {

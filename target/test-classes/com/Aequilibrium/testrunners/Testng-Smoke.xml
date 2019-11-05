@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Aequlibrium Test Suite" verbose="1">
+<suite name="Aequlibrium Test Suite" verbose="1" thread-count="20" parallel="tests">
 	<listeners>
 		<listener class-name="com.qa.reportlistener.ExtentReporterNG" />
 	</listeners>
 
-	<test name="Aequlibrium Smoke Test">
+	<test name="AequlibriumTest">
 		<classes>
 			<class name="com.Aequilibrium.testcases.LoginPageTest" />
 		</classes>
 	</test>
+
+	
 </suite>
